@@ -1,0 +1,68 @@
+# Foundation to US Healthcare
+
+This repository is a private backup of the production course. GitHub Pages and custom-domain publishing are intentionally disabled here. The production repository is `jsan8574/foundation-to-us-healthcare`.
+
+A self-paced, no-build course in plain HTML, CSS and JavaScript. It can be hosted from this folder as-is.
+
+## Preview Locally
+
+From this folder, run a simple local web server:
+
+```sh
+python3 -m http.server 8765
+```
+
+Then open `http://127.0.0.1:8765/`. Opening `index.html` directly may restrict browser storage or downloaded files, so an HTTP preview is recommended.
+
+## Publish To Personal GitHub Pages
+
+The published public address is `https://ushealthcarefoundation.revexpertone.com/`. The GitHub Pages repository remains `jsan8574/foundation-to-us-healthcare`.
+
+1. Create a repository in the `jsan8574` GitHub account.
+2. Add that repository as this folder's remote and push the committed files.
+3. In the repository, open **Settings → Pages**.
+4. Choose **Deploy from a branch**, select the published branch and the root folder, then save.
+
+GitHub Pages is public by default, regardless of repository privacy or paid plan. Do not publish patient information, credentials or other private data.
+
+## Course Behavior
+
+- Progress, answers, reflections, required explanations, assessment attempts, the learner name and active-learning time are stored in the current browser with `localStorage`.
+- A learner name is required before the course opens. The same saved name appears on the certificate and PDF learning record.
+- The timer counts only while the page is visible, focused and recently active. It excludes long gaps and pauses after 90 seconds of inactivity.
+- Reflections, selected practice explanations and workbook responses require at least 20 characters and cannot be skipped.
+- Workbook activities adapted from the supplied Day 1 and Day 2 self-learning workbooks cover all distinct topics that were not already addressed by an existing course activity.
+- Coaching key points appear only after the related written work is submitted.
+- Dense lesson content is presented as question-led reveal cards so learners can explore one idea at a time.
+- Selected written activities include fictional insurance-card, clinic-record and hospital-record illustrations. All names, identifiers and amounts in these visuals are invented for training.
+- The Claim Life Cycle module includes a required fictional EOB interpretation and calculation activity with line-level revenue codes, HCPCS, modifiers, allowed amounts, contractual adjustments, coinsurance, payer payment, patient responsibility and claim reconciliation.
+- The claim-form navigation lab uses six quick locator questions per supplied first-page form.
+- The RCM overview uses expandable function cards and a connect-the-dots handoff sequence.
+- Each module contains a lesson acknowledgement checkbox, required practice, a two-question check for understanding and a required reflection.
+- The payer module covers Medicare and Medicaid delivery, military and veteran programs, common HMO/PPO/EPO/POS patterns, coordination of benefits, liability coverage, and the distinction between insurance payers and HSA/FSA funding accounts.
+- The graded knowledge check contains 20 questions and requires 80% to pass.
+- The certificate downloads as a PNG. The PDF learning record includes a completion-verification summary plus every module acknowledgement, learning objective, key-concept reminder, activity response and attempt, workbook prompt and learner response, required explanation, check-for-understanding answer and attempt, reflection, coaching reminder and graded knowledge-check attempt. Missing or unsubmitted requirements appear in red, and recorded activities show their attempt counts.
+- PDF export loads jsPDF from a CDN and therefore requires an internet connection. The rest of the course uses local assets, apart from learner-selected official reference links.
+
+To reset a learner's progress for testing, clear site data for the preview or deployed address in the browser. Progress does not sync between browsers, devices or domains.
+
+## Claim-Form Resources
+
+Only the first page from each supplied PDF is included:
+
+- `assets/cms1500-page1.png`
+- `assets/ub04-page1.png`
+
+The supplied CMS-1500 is the legacy 08/05 form. It is identified as a location exercise in the course, with a link to the current CMS professional paper-claim resource. The UB-04 activity links to the official CMS institutional-claim resource. Update these assets only with blank or approved training forms.
+
+## Fonts
+
+The supplied Proxima Nova files include the exact Regular, Regular Italic, Semibold, Semibold Italic, Bold and Bold Italic weights. They are used locally from `assets/fonts/`; no weight substitutions are needed.
+
+## Updating The Course
+
+Course content and answer keys are in `course.js`. Interface behavior is in `app.js`, and visual styles are in `styles.css`.
+
+After changing CSS or JavaScript, increment the shared `?v=N` value in `index.html`. Keeping the version values aligned prevents GitHub Pages and browsers from serving a stale mix of files.
+
+The site has no framework, package manager, build step, backend or login.
